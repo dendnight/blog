@@ -15,7 +15,13 @@
       // 按钮点击
       btn.onclick = function()
       {
-        alert(url.value);
+        var url_text = url.value;
+        // alert(url.value);
+        var iframe = document.createElement('iframe');
+        iframe.style.display = none;
+        iframe.src = 'http://service.weibo.com/share/share.php?url='+url_text;
+        
+        
       }
     </script>
   </body>
