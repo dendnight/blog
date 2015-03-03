@@ -4,9 +4,19 @@
   </head>
   <body>
     <input id="url" type="text"/> 
+    <input id="btn" type="button" value="生成短链接" />
     <script>
-      var url = document.getElementById("url");
-      
+      var element = function(id)
+      {
+        return document.getElementById(id);
+      }
+      var url = element('url');
+      var btn = element('btn');
+      // 按钮点击
+      btn.click = function()
+      {
+        alert(url.value);
+      }
     </script>
   </body>
 </html>
