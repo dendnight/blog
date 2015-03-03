@@ -5,6 +5,7 @@
   <body>
     <input id="url" type="text"/> 
     <input id="btn" type="button" value="生成短链接" />
+    <div id="content" style="display:none;"></div>
     <script>
       var element = function(id)
       {
@@ -12,16 +13,15 @@
       }
       var url = element('url');
       var btn = element('btn');
+      
       // 按钮点击
       btn.onclick = function()
       {
         var url_text = url.value;
         // alert(url.value);
         var iframe = document.createElement('iframe');
-        iframe.style.display = none;
         iframe.src = 'http://service.weibo.com/share/share.php?url='+url_text;
-        
-        
+        element('content').appendChild(iframe);
       }
     </script>
   </body>
